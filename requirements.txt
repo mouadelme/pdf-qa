@@ -1,6 +1,7 @@
 annotated-doc==0.0.4
 anyio==4.14.1
 certifi==2026.6.17
+charset-normalizer==3.4.9
 click==8.4.2
 filelock==3.29.7
 fsspec==2026.6.0
@@ -8,7 +9,7 @@ h11==0.16.0
 hf-xet==1.5.1
 httpcore==1.0.9
 httpx==0.28.1
-huggingface_hub==1.23.0
+huggingface_hub==0.36.2
 idna==3.18
 Jinja2==3.1.6
 joblib==1.5.3
@@ -24,6 +25,7 @@ Pygments==2.20.0
 pymupdf==1.28.0
 PyYAML==6.0.3
 regex==2026.7.10
+requests==2.34.2
 rich==15.0.0
 safetensors==0.8.0
 scikit-learn==1.9.0
@@ -35,6 +37,7 @@ threadpoolctl==3.6.0
 tokenizers==0.22.2
 torch==2.13.0
 tqdm==4.68.4
-transformers==5.13.1
+transformers==4.57.6
 typer==0.26.8
 typing_extensions==4.16.0
+urllib3==2.7.0
