@@ -1,4 +1,5 @@
 import fitz
+from chunker import chunk_text
 
 
 def read_pdf(pdf_path: str) -> str:
@@ -17,6 +18,12 @@ def read_pdf(pdf_path: str) -> str:
 
 
 if __name__ == "__main__":
-    pdf_text = read_pdf("data/sample.pdf")
+    text = read_pdf("data/sample.pdf")
 
-    print(pdf_text[:1000])
+    chunks = chunk_text(text)
+
+    print(f"Chunks: {len(chunks)}")
+
+    print()
+
+    print(chunks[0])
