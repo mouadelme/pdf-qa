@@ -1,29 +1,27 @@
 import fitz
+
 from chunker import chunk_text
+from embedder import Embedder
 
 
 def read_pdf(pdf_path: str) -> str:
-    """Read all text from a PDF."""
+    """Extract text from every page of a PDF."""
+    text_parts: list[str] = []
 
-    document = fitz.open(pdf_path)
+    with fitz.open(pdf_path) as document:
+        for page in document:
+            text_parts.append(page.get_text())
 
-    text = ""
-
-    for page in document:
-        text += page.get_text()
-
-    document.close()
-
-    return text
+    return "\n".join(text_parts)
 
 
 if __name__ == "__main__":
     text = read_pdf("data/sample.pdf")
-
     chunks = chunk_text(text)
 
+    embedder = Embedder()
+    embeddings = embedder.embed_documents(chunks)
+
     print(f"Chunks: {len(chunks)}")
-
-    print()
-
-    print(chunks[0])
+    print(f"Embedding matrix shape: {embeddings.shape}")
+    print(f"First embedding dimensions: {embeddings[0][:10]}")
