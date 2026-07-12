@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .DS_Store
 .env
+
+# Local test documents
+data/
+*.pdf
